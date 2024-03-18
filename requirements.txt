@@ -1,0 +1,9 @@
+category-encoders
+matplotlib
+numpy
+pandas    
+pickleshare
+scipy
+seaborn
+xgboost
+streamlit
