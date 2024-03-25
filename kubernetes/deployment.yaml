@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: employee-attrition
+  name: employee-attrition
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: employee-attrition
+  template:
+    metadata:
+      labels:
+        app: employee-attrition
+    spec:
+      containers:
+      - image: docker.io/akashkumar7902/employee-attrition:latest
+        imagePullPolicy: IfNotPresent
+        name: employee-attrition
+        ports:
+        - containerPort: 8501
+          protocol: TCP

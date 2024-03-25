@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: employee-attrition
+  labels:
+    run: employee-attrition
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 8501
+    targetPort: 8501
+    protocol: TCP
+    name: http
+  - port: 8080
+    protocol: TCP
+    name: https
+  selector:
+    app: employee-attrition
